@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transparent Login Form with Bootstrap 4</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+<script>
+function validate(){ 
+  	    var a=document.forms[0]; 
+           var letters = /^[A-Za-z\s]+$/;
+		   if(a.username.value=="")
+        {
+        	alert("Username must not be empty");
+        	return false;
+        }
+      if(!(a.username.value.match(letters))){
+      		alert("please enter owner name only in text");
+           	return false;
+      }
+           if(a.username.value.length < 5){
+           	alert("please enter username more than 5 characters");
+           	return false;
+           }
+		   
+		      if(a.password.value=="")
+        {
+        	alert("password must not be empty");
+        	return false;
+        }
+		   
+           if(a.password.value.length < 6){
+           	alert("please enter password more than 6 in length");
+           	return false;
+           }
+		   
+		   else{
+    			alert("sumitted successfully");
+    		}
+    }
+
+</script>
+ 
+<div class="modal-dialog text-center">
+<div class="col-sm-8 main-section">
+	
+	<div class="modal-content">
+		<div class="col-12 user-img">
+        <img src="img/face.png">			
+		</div>
+		<form onsubmit="validate();return false">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Enter username" id="username"  >
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="Enter password" id="password">
+			</div>
+		<input  type="submit" class="btn btn-success"  target="#" >
+		<div class="col-12 forgot">
+			<a href="signup.html" style="color: red;">Create Account?</a>
+		</div>
+	</div><!--Moda-content End-->
+    
+</div>
+
+	
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

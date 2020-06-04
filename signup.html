@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<style>
+body
+{
+	font-family: 'Roboto',sans-serif;
+	background: url(img/mountain.jpg) no-repeat center center fixed;
+	background-size: cover;
+	
+}
+
+</style>
+</head>
+<body>
+<h1 class="text-white text-center font-weight-bold " style="font-size: 55px; text-align: center;background-color:blue;">Create account  </h1>
+
+  <div class="container">
+    
+    <div class="col-lg-6 m-auto d-block">
+      
+      <form  onsubmit="validation();return false;" class="bg-light" style="border-radius: 15px;">
+        
+        <div class="form-group" >
+          <label for="user" class="font-weight-bold" style="margin-left:20px;"> Username: </label>
+          <input type="text" name="user" class="form-control" id="user" autocomplete="off" >
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold" style="margin-left:20px;"> Password: </label>
+          <input type="text" name="pass" class="form-control" id="pass" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold" style="margin-left:20px;"> Confirm Password: </label>
+          <input type="text" name="conpass" class="form-control" id="conpass" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold" style="margin-left:20px;"> Mobile Number: </label>
+          <input type="text" name="mobile" class="form-control" id="mobileNumber" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold" style="margin-left:20px;"> Email: </label>
+          <input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+        </div>
+
+        <input type="submit" name="submit" value="submit" class="btn btn-success" style="margin-left:200px; margin-bottom:10px; width:20%;border-radius: 10px;">
+
+
+      </form><br><br>
+
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    
+
+    function validation(){
+
+      var user = document.getElementById('user').value;
+      var pass = document.getElementById('pass').value;
+      var confirmpass = document.getElementById('conpass').value;
+      var mobileNumber = document.getElementById('mobileNumber').value;
+      var emails = document.getElementById('emails').value;
+
+
+
+
+
+      if(user == ""){
+        alert("Username can not be empty");
+        return false;
+      }
+      if((user.length <= 2) || (user.length > 20)) {
+        alert("Username lenght must be between 2 and 20");
+        return false; 
+      }
+      if(!isNaN(user)){
+        alert("only characters are allowed");
+        return false;
+      }
+
+
+
+
+
+
+
+      if(pass == ""){
+        alert("Please fill the password field");
+        return false;
+      }
+      if((pass.length <= 5) || (pass.length > 20)) {
+        alert("Passwords lenght must be between  5 and 20");
+        return false; 
+      }
+
+      if(pass!=confirmpass){
+        alert("Password does not match the confirm password");
+        return false;
+      }
+
+      if(confirmpass == ""){
+        alert("Please fill the confirmpassword field");
+        return false;
+      }
+
+
+
+
+      if(mobileNumber == ""){
+        alert("Please fill the mobile NUmber field");
+        return false;
+      }
+      if(isNaN(mobileNumber)){
+        alert("user must write digits only not characters");
+        return false;
+      }
+      if(mobileNumber.length!=10){
+        alert("Mobile Number must be 10 digits only");
+        return false;
+      }
+
+
+
+      if(emails == ""){
+        alert("Please fill the email idx` field");
+        return false;
+      }
+      if(emails.indexOf("@",0)<0){
+    			alert("include @ in your email address");
+    			
+    			return false;
+    		}
+    		if(emails.indexOf(".",0)<0){
+    			alert("include . in your email address");
+    			
+    			return false;
+    		}
+    		else{
+    			alert("submitted succesfully");
+    			window.location.href = "#.html";
+    		}
+    }
+
+  </script>
+
+</body>
+</html>
